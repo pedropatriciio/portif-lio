@@ -1,0 +1,287 @@
+/* GERAL E VARIÁVEIS */
+/* --- HABILIDADES (SKILLS SECTION) --- */
+
+/* O container que cria o layout em grade responsivo */
+.skills-grid {
+    display: grid;
+    /* Cria colunas que se ajustam automaticamente ao tamanho da tela */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px; /* Espaçamento entre os cards */
+}
+
+/* Estilo de cada card individual */
+.skill-card {
+    background-color: var(--card-bg-light);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Estilo para o modo escuro */
+body.dark-mode .skill-card {
+    background-color: var(--card-bg-dark);
+    box-shadow: none;
+}
+
+/* Efeito ao passar o mouse */
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .skill-card:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+
+/* Estilo dos ícones dentro dos cards */
+.skill-card i {
+    font-size: 3rem;
+    color: var(--primary-color-light);
+}
+
+/* Cor dos ícones no modo escuro */
+body.dark-mode .skill-card i {
+    color: var(--primary-color-dark);
+}
+:root {
+    --bg-color-light: #f4f4f4;
+    --text-color-light: #333;
+    --primary-color-light: #800080;
+    --card-bg-light: #ffffff;
+    --header-bg-light: rgba(255, 255, 255, 0.8);
+
+    --bg-color-dark: #0d1117; /* Um fundo escuro, similar ao do GitHub */
+    --text-color-dark: #f0f0f0;
+    --primary-color-dark: #9933ff;
+    --card-bg-dark: #1e1e1e;
+    --header-bg-dark: rgba(13, 17, 23, 0.7); /* Fundo do header no modo escuro */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-mode {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+}
+
+body.dark-mode {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+}
+
+/* --- ESTILOS DO TSPARTICLES --- */
+#tsparticles {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0; /* Começa invisível */
+  transition: opacity 0.5s ease-in-out; /* Animação de fade */
+}
+
+/* Torna o canvas de partículas visível APENAS no modo escuro */
+body.dark-mode #tsparticles {
+  opacity: 1;
+}
+
+/* Garante que o conteúdo fique por cima das partículas */
+header, main, footer {
+  position: relative;
+  z-index: 1;
+}
+
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* Fundos das seções no modo escuro para ver as partículas */
+body.dark-mode .hero-section {
+  background: transparent;
+}
+body.dark-mode .about-section,
+body.dark-mode .skills-section,
+body.dark-mode .projects-section,
+body.dark-mode .contact-section {
+  /* Fundo semi-transparente para legibilidade sobre as partículas */
+  background-color: rgba(13, 17, 23, 0.7);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  margin: 40px auto;
+  max-width: 1100px;
+}
+body.dark-mode .contact-section {
+  background-color: transparent; /* Contato pode ser totalmente transparente */
+  backdrop-filter: none;
+}
+
+
+/* --- RESTO DO CSS (sem grandes alterações) --- */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.highlight {
+    color: var(--primary-color-light);
+}
+body.dark-mode .highlight {
+    color: var(--primary-color-dark);
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    transition: background-color 0.3s;
+}
+body.light-mode header { background-color: var(--header-bg-light); }
+body.dark-mode header { background-color: var(--header-bg-dark); }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0; padding: 0;
+}
+.nav-links a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--primary-color-light); }
+body.dark-mode .nav-links a:hover { color: var(--primary-color-dark); }
+
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: inherit;
+}
+
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content .profile-pic {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid var(--primary-color-light);
+}
+body.dark-mode .hero-content .profile-pic {
+    border-color: var(--primary-color-dark);
+}
+.hero-content h1 { font-size: 3rem; margin: 10px 0; }
+.hero-content .subtitle { font-size: 1.5rem; color: #666; }
+body.dark-mode .hero-content .subtitle { color: #ccc; }
+#typing-effect {
+    font-weight: 600;
+    color: var(--primary-color-light);
+}
+body.dark-mode #typing-effect {
+    color: var(--primary-color-dark);
+}
+.social-links { margin: 20px 0; }
+.social-links a {
+    font-size: 2rem;
+    margin: 0 15px;
+    color: inherit;
+    transition: color 0.3s;
+}
+.social-links a:hover { color: var(--primary-color-light); }
+body.dark-mode .social-links a:hover { color: var(--primary-color-dark); }
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s, background-color 0.3s;
+    background-color: var(--primary-color-light);
+    color: #fff;
+}
+body.dark-mode .btn { background-color: var(--primary-color-dark); }
+.btn:hover { transform: translateY(-3px); }
+
+.about-content {
+    display: flex;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    
+    /* 1. Transforma o elemento em um círculo perfeito */
+    border-radius: 50%; 
+
+    /* 2. Adiciona uma borda azul (sugestão baseada no seu layout) */
+    border: 4px solid #007bff; 
+
+    /* Opcional: Adiciona uma sombra para dar destaque */
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.nav-links {
+    margin-left: -10%; /* AQUI ESTÁ A MÁGICA */
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 0;
+}
+
+
+/* O botão de tema virá logo depois dos links */
+
+
+/* O logo e o botão não precisam de estilos especiais de alinhamento */
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Nome - Desenvolvedor Web</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+
+<body>
+
+    <div id="tsparticles"></div>
+
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">Pedro Patricio</a>
+            <ul class="nav-links">
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle-btn">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <img src="imagens/44f9cd95-f108-4de6-9e16-7b89c245759f.JPEG" alt="Sua Foto Profissional"
+                    class="profile-pic">
+                <h1>Olá, eu sou <span class="highlight">Pedro</span></h1>
+                <p class="subtitle">Eu sou um <span id="typing-effect"></span></p>
+                <div class="social-links">
+                    <a href="URL_DO_SEU_LINKEDIN_AQUI" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="URL_DO_SEU_GITHUB_AQUI" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+                <a href="#projects" class="btn">Veja meus projetos</a>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="about-container">
+                <div class="about-text-content">
+                    <h2>Sobre Mim</h2>
+                    <p>Como desenvolvedor em formação em Engenharia de Software, uno proficiência técnica a uma forte
+                        mentalidade focada no cliente. Minha carreira iniciou em Suporte e Customer Success (CS/CX),
+                        onde desenvolvi uma profunda compreensão das necessidades do usuário. Os princípios de
+                        arquitetura e ciclo de vida de software que aprendi na academia me permitem traduzir essas
+                        necessidades em soluções robustas e escaláveis.
+
+                        Com uma abordagem orientada a dados e resultados, utilizo Python para IA, SQL para análise de
+                        dados, e construo desde sistemas eficientes em C até interfaces interativas com JavaScript e
+                        React, sempre buscando maximizar recursos e garantir a satisfação dos envolvidos.</p>
+                </div>
+                <div class="about-image-wrapper">
+                    <img src="imagens/Imagem do WhatsApp de 2025-10-17 à(s) 15.46.49_b7a07d4e.jpg" alt="Sua foto"
+                        class="about-content">
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <h2>Habilidades Técnicas</h2>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class="fab fa-html5"></i> HTML5</div>
+                    <div class="skill-card"><i class="fab fa-css3-alt"></i> CSS3</div>
+                    <div class="skill-card"><i class="fab fa-js"></i> JavaScript</div>
+                    <div class="skill-card"><i class="fab fa-react"></i> React</div>
+                    <div class="skill-card"><i class="fab fa-python"></i> Python</div>
+                    <div class="skill-card"><i class="fas fa-database"></i> SQL</div>
+                    <div class="skill-card"><i class="fab fa-git-alt"></i> Git</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2>Meus Projetos</h2>
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                </div>
+                <div class="projects-grid">
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Entre em Contato</h2>
+                <p>Estou disponível para freelance e novas oportunidades. Sinta-se à vontade para me contatar!</p>
+                <a href="mailto:seuemail@example.com" class="btn">Enviar E-mail</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Seu Nome. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
